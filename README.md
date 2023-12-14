@@ -1,7 +1,11 @@
 ### Hi there 👋
 
-- 🌱 I’m currently learning C++
-- 🔭 I’m currently working on a game project
+- 🌱 I’m currently learning C++ and Qt.
+
+---
+
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=cEvolve05&show_icons=true&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
+[![WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=cEvolve05)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--
 **cEvolve05/cEvolve05** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
