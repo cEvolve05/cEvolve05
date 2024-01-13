@@ -1,0 +1,9 @@
+# 内容：补充
+# 数量：6条
+
+PROCESS-NAME,Steam++.exe
+PROCESS-NAME,QQ.exe
+PROCESS-NAME,syncthing.exe
+DOMAIN-SUFFIX,syncthing.net
+DOMAIN-SUFFIX,ankiweb.net
+DOMAIN-SUFFIX,digicert.com
