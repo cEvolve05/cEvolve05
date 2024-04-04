@@ -1,0 +1,162 @@
+{
+    "log": {
+        "disabled": false,
+        "level": "info",
+        // "output": "sing-box.log",
+        "timestamp": true
+    },
+    "dns": {
+        "servers": [
+            {
+                "tag": "cn-ip",
+                "address": "",
+                "address_resolver": "",
+                "address_strategy": "",
+                "strategy": "",
+                "detour": "",
+                "client_subnet": ""
+            }
+        ],
+        "rules": [
+            {
+                "server": "local",
+                "inbound": [
+                    "tun"
+                ],
+                // "ip_version": 6,
+                "query_type": [
+                    "A",
+                    "HTTPS",
+                    32768
+                ],
+                "network": "tcp",
+                "auth_user": [
+                    "usera",
+                    "userb"
+                ],
+                "protocol": [
+                    "tls",
+                    "http",
+                    "quic"
+                ],
+                "domain": [
+                    "test.com"
+                ],
+                "domain_suffix": [
+                    ".cn"
+                ],
+                "domain_keyword": [
+                    "test"
+                ],
+                "domain_regex": [
+                    "^stun\\..+"
+                ],
+                "geoip": [
+                    "cn"
+                ],
+                "source_ip_cidr": [
+                    "10.0.0.0/24",
+                    "192.168.0.1"
+                ],
+                "source_ip_is_private": false,
+                "ip_cidr": [
+                    "10.0.0.0/24",
+                    "192.168.0.1"
+                ],
+                "ip_is_private": false,
+                "source_port": [
+                    12345
+                ],
+                "source_port_range": [
+                    "1000:2000",
+                    ":3000",
+                    "4000:"
+                ],
+                "port": [
+                    80,
+                    443
+                ],
+                "port_range": [
+                    "1000:2000",
+                    ":3000",
+                    "4000:"
+                ],
+                "process_name": [
+                    "curl"
+                ],
+                "process_path": [
+                    "/usr/bin/curl"
+                ],
+                "package_name": [
+                    "com.termux"
+                ],
+                "user": [
+                    "sekai"
+                ],
+                "user_id": [
+                    1000
+                ],
+                "clash_mode": "direct",
+                "wifi_ssid": [
+                    "My WIFI"
+                ],
+                "wifi_bssid": [
+                    "00:00:00:00:00:00"
+                ],
+                "rule_set": [
+                    "geoip-cn",
+                    "geosite-cn"
+                ],
+                "rule_set_ipcidr_match_source": false,
+                "invert": false,
+                "outbound": [
+                    "direct"
+                ],
+                "disable_cache": false,
+                // "rewrite_ttl": 100,
+                // "client_subnet": "127.0.0.1"
+            },
+            { // TODO: read codes
+                "type": "logical",
+                "mode": "and",
+                "rules": [],
+                "server": "local",
+                "disable_cache": false,
+                // "rewrite_ttl": 100,
+                // "client_subnet": "127.0.0.1"
+            }
+        ],
+        "final": "",
+        "strategy": "prefer_ipv4",
+        "disable_cache": false,
+        "disable_expire": false,
+        "independent_cache": false,
+        "reverse_mapping": true,
+        "client_subnet": "",
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        }
+    },
+    "ntp": {
+        "enabled": true
+    },
+    "inbounds": [
+        {
+            "tag": "Direct",
+            "type": "direct"
+        }
+    ],
+    "outbounds": [],
+    "route": {
+        "rules": [],
+        "rule_set": [],
+        "final": "",
+        "auto_detect_interface": false,
+        "override_android_vpn": false,
+        "default_interface": "en0",
+        "default_mark": 233
+    },
+    "experimental": {}
+}
