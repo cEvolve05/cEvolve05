@@ -16,6 +16,11 @@ DOMAIN-SUFFIX,clickserve.dartsearch.net
 DOMAIN-SUFFIX,crl.pki.goog
 DOMAIN-SUFFIX,dl.google.com
 DOMAIN-SUFFIX,dl.l.google.com
+DOMAIN-SUFFIX,redirector.gvt0.com
+DOMAIN-SUFFIX,redirector.gvt1.com
+DOMAIN-SUFFIX,redirector.gvt2.com
+DOMAIN-SUFFIX,redirector.gvt3.com
+DOMAIN-SUFFIX,redirector.gvt4.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,gtm.oasisfeng.com
