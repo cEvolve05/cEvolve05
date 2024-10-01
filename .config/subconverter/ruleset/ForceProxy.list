@@ -1,0 +1,4 @@
+# some special rule to override other setting
+
+# WeChat FCM
+DOMAIN-SUFFIX,szshort.weixin.qq.com
