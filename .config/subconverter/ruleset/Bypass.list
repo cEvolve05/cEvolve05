@@ -11,3 +11,7 @@ DOMAIN-SUFFIX,sast.fun
 DOMAIN-SUFFIX,girigirilove.com
 DOMAIN-SUFFIX,storage.googleapis.com
 DOMAIN,download-cdn.jetbrains.com
+
+# bt
+
+AND,((PROCESS-NAME,com.delphicoder.flud),(SRC-PORT,55623))
