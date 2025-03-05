@@ -1,0 +1,162 @@
+# Profile Enhancement Merge Template for Clash Verge
+
+profile:
+  store-selected: true
+
+# prepend-rules: [
+#   # "PROCESS-NAME,TextInputHost.exe,DIRECT",
+#   # "PROCESS-NAME,svchost.exe,DIRECT",
+#   "AND,((PROCESS-NAME,qbittorrent.exe),(SRC-PORT,60348)),DIRECT"
+# ]
+
+# prepend-proxies: []
+
+# prepend-proxy-groups: []
+
+# append-rules: []
+
+# append-proxies: []
+
+# append-proxy-groups: []
+
+# DNS server settings
+# This section is optional. When not present, the DNS server will be disabled.
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: true # when the false, response to AAAA questions will be empty
+
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  enhanced-mode: fake-ip # fake-ip or redir-host (not recommended)
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+  use-hosts: false # lookup hosts and return IP record
+  use-system-hosts: true
+
+  # Hostnames in this list will not be resolved with fake IPs
+  # i.e. questions to these domain names will always be answered with their
+  # real IP addresses
+
+  fake-ip-filter:
+    # for audio input
+    - licensing.mp.microsoft.com
+    - oneocsp.microsoft.com
+    - slscr.update.microsoft.com
+    - global.sr.speech.microsoft.com
+    - tlu.dl.delivery.mp.microsoft.com
+    # for pinyin input
+    - cn.bing.com
+    - inputsuggestions.msdxcdn.microsoft.com
+    - array812.prod.do.dsp.mp.microsoft.com
+    - win1910.ipv6.microsoft.com
+    # Google
+    - dl.google.com
+    # NJUPT
+    - "*.njupt.edu.cn"
+    # Microsoft Smart Screen
+    - "checkappexec.microsoft.com"
+    - "sfdataservice.microsoft.com"
+    - "+.events.data.microsoft.com"
+    # Steam Game Download
+    - "steampipe.steamcontent.tnkjmec.com"
+    - "st.dl.eccdnx.com"
+    - "st.dl.bscstorage.net"
+    - "st.dl.pinyuncloud.com"
+    - "dl.steam.clngaa.com"
+    - "cdn.mileweb.cs.steampowered.com.8686c.com"
+    - "xz.pphimalayanrt.com"
+    # QQ Log-in
+    - localhost.ptlogin2.qq.com
+    - "+.qq.com"
+    - "+.digicert.cn"
+    # CFW Default
+    - "*.lan"
+    - +.stun.*.*
+    - +.stun.*.*.*
+    - +.stun.*.*.*.*
+    - +.stun.*.*.*.*.*
+    - "*.n.n.srv.nintendo.net"
+    - +.stun.playstation.net
+    - xbox.*.*.microsoft.com
+    - "*.*.xboxlive.com"
+    - "*.msftncsi.com"
+    - "*.msftconnecttest.com"
+    - WORKGROUP
+    - +.cn
+
+  # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
+  # All DNS questions are sent directly to the nameserver, without proxies
+  # involved. Clash answers the DNS question with the first result gathered.
+  nameserver:
+    # - 114.114.114.114 # default value
+    # - 8.8.8.8 # default value
+    # - tls://dns.rubyfish.cn:853 # DNS over TLS
+    # - https://1.1.1.1/dns-query # DNS over HTTPS
+    # - dhcp://en0 # dns from dhcp
+    # - '8.8.8.8#en0'
+    # - 221.131.143.69
+    # - 112.4.0.55
+    # - 8.8.8.8
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    # - tls://dns.rubyfish.cn:853
+
+  # When `fallback` is present, the DNS server will send concurrent requests
+  # to the servers in this section along with servers in `nameservers`.
+  # The answers from fallback servers are used when the GEOIP country
+  # is not `CN`.
+  fallback:
+    - tls://1dot1dot1dot1.cloudflare-dns.com
+    - https://doh.dns.sb/dns-query
+    - https://dns.google/dns-query
+    # - tls://dot.pub
+    # - https://dns.alidns.com/dns-query
+    # - https://dns.oceandigital.me/dns-query
+    # - https://dns.galaxy-cloud.icu/dns-query
+
+  # If IP addresses resolved with servers in `nameservers` are in the specified
+  # subnets below, they are considered invalid and results from `fallback`
+  # servers are used instead.
+  #
+  # IP address resolved with servers in `nameserver` is used when
+  # `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.
+  #
+  # If `fallback-filter.geoip` is false, results from `nameserver` nameservers
+  # are always used if not match `fallback-filter.ipcidr`.
+  #
+  # This is a countermeasure against DNS pollution attacks.
+  fallback-filter:
+    geoip: false
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - "+.google.*"
+      - "+.facebook.com"
+      - "+.youtube.*"
+
+  # Lookup domains via specific nameservers
+  nameserver-policy:
+    # '*.steampowered.com': "https://doh.pub/dns-query"
+    "+.baidu.com": "119.29.29.29"
+    "+.qq.com": "119.29.29.29"
+    "+.tencent.com": "119.29.29.29"
+    "+.sast.fun": "119.29.29.29"
+    "+.ieee.org": "119.29.29.29"
+    # 'dl.google.com': 'https://dns.alidns.com/dns-query'
+    "+.njupt.edu.cn": "218.2.135.1"
+    "*mtalk.google.com": "https://doh.pub/dns-query"
+    "+.girigirilove.com": "https://doh.pub/dns-query"
+
+tun:
+  enable: true
+  stack: gvisor # gvisor or system
+  dns-hijack:
+    - 198.18.0.2:53
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+  # interface-name: Ethernet, WiFi 2
