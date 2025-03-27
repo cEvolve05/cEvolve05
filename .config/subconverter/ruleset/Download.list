@@ -14,6 +14,8 @@ PROCESS-NAME,WebTorrent Helper.exe
 DOMAIN-SUFFIX,storage.googleapis.com
 DOMAIN-SUFFIX,download-cdn.jetbrains.com
 DOMAIN-SUFFIX,download.visualstudio.microsoft.com
+DOMAIN-SUFFIX,download.prss.microsoft.com
+DOMAIN-KEYWORD,download
 
 # bt
 # AND,((PROCESS-NAME,com.delphicoder.flud),(SRC-PORT,55623))
