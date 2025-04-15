@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-- 🌱 I’m currently learning C++ and Slint.
+- 🌱 I’m currently learning C++.
 
 ---
 
